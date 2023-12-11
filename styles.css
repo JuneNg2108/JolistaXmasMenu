@@ -12,6 +12,17 @@ body {
 
 .page {
     text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .hidden {
@@ -40,9 +51,26 @@ body {
     font-size: 2em;
 }
 
+
 .cake-buttons {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cake-buttons button {
+    margin: 10px;
+    padding: 15px;
+    background-color: #FF6347; /* Orange-Red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cake-buttons button:hover {
+    background-color: #FF4500; /* Darker Orange-Red color on hover */
 }
 
 #order-page {
@@ -218,7 +246,6 @@ button[data-back]:hover {
     height: auto;
 }
 
-/* Add styles for the images in fruitcake-page */
 #fruitcake-page .top-right-image {
     position: absolute;
     top: 20px;
