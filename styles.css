@@ -1,0 +1,264 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    color: white;
+}
+
+.page {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#touch-to-begin {
+    cursor: pointer;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+#touch-to-begin:hover {
+    color: #FF6347;
+}
+
+.animated {
+    animation: bounce 1s infinite;
+}
+
+#welcome-page h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+}
+
+
+.cake-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cake-buttons button {
+    margin: 10px;
+    padding: 15px;
+    background-color: #FF6347; /* Orange-Red color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cake-buttons button:hover {
+    background-color: #FF4500; /* Darker Orange-Red color on hover */
+}
+
+#order-page {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"],
+button[data-back] {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button[data-back]:hover {
+    background-color: #45a049;
+}
+
+.cake-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+#thank-you-page h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 4vw; /* 4% of the viewport width */
+    color: #FF6347;
+    animation: bounce 1s infinite;
+}
+
+#thank-you-page p {
+    font-size: 3vw; /* 3% of the viewport width */
+    color: #006400;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+#cake-selection-page h2,
+#gingerbread-page h2,
+#butter-page h2,
+#fruitcake-page h2,
+.menu-section h2 {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: 'Pacifico', cursive;
+    font-size: 4em;
+    color: #333;
+    animation: bounce 1s infinite;
+}
+
+.recipe {
+    margin-top: 80px; /* Adjust the margin-top for recipes */
+}
+
+.ingredient-title,
+.method-title {
+    color: #333; /* Dark color for titles */
+}
+
+.recipe ul, .recipe ol {
+    margin-top: 5px;
+}
+
+.back-btn {
+    margin-top: 20px;
+}
+
+.ingredients-list,
+.method-list {
+    margin-left: 0;
+    padding: 0;
+}
+
+.ingredients-list li,
+.method-list li {
+    color: #006400; /* Dark Green color for list items */
+}
+
+.ingredient-box,
+.method-box {
+    background-color: #FFC0CB; /* Light Pink background color */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+.method-list li {
+    font-family: 'YourFontForMethod', sans-serif; /* Replace 'YourFontForMethod' with your desired font */
+    font-size: 1.2em; /* Adjust the font size for the method steps */
+    color: #FF5722; /* Set the color to your preferred color */
+    margin-bottom: 8px;
+}
+
+/* Adjustments for mobile responsiveness */
+@media (max-width: 600px) {
+    #cake-selection-page h2,
+    #gingerbread-page h2,
+    #butter-page h2,
+    #fruitcake-page h2,
+    .menu-section h2 {
+        margin: 10px 0 0 10px; /* Adjust the margin for smaller screens */
+    }
+}
+
+.top-right-image {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    max-width: 300px; /* Adjust the max-width as needed */
+    height: auto;
+}
+
+.bottom-left-image {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    max-width: 300px; /* Adjust the max-width as needed */
+    height: auto;
+}
+
+/* Add styles for the images in butter-page */
+#butter-page .top-right-image {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 300px; /* Adjust the max-width as needed */
+    height: auto;
+}
+
+#butter-page .bottom-left-image {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    max-width: 300px; /* Adjust the max-width as needed */
+    height: auto;
+}
+
+/* Add styles for the images in fruitcake-page */
+#fruitcake-page .top-right-image {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 300px; /* Adjust the max-width as needed */
+    height: auto;
+}
+
+#fruitcake-page .bottom-left-image {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    max-width: 300px; /* Adjust the max-width as needed */
+    height: auto;
+}
