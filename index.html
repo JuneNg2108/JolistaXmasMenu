@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xmas with Jolista</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('open.png');
+            background-repeat: no-repeat;
+            background-attachment: relative;
+            background-size: 100% 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: white; /* Set text color to white for better visibility on the background */
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome-page" onclick="showCakeSelection()" style="width: 100%; height: 100vh;"></div>
+
+    <audio id="background-music" autoplay loop>
+        <source src="music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="cake-selection-page" class="page hidden">
+        <h2>Choose Your Cake</h2>
+        <div class="cake-buttons">
+            <button id="gingerbread-btn">Gingerbread Cookies</button>
+            <button id="butter-btn">Butter Cookies</button>
+            <button id="fruitcake-btn">Fruitcake</button>
+            <button id="order-btn" onclick="showOrderPage()">Order Now</button>
+        </div>
+    </div>
+
+
+    <div id="gingerbread-page" class="page hidden">
+        <section id="gingerbread-cookies" class="menu-section">
+            <h2>Bánh Gừng </h2>
+            <div class="recipe">
+                <div class="ingredient-box">
+                    <h3 class="ingredient-title">Nguyên liệu:</h3>
+                    <ul class="ingredients-list">
+                        <li>Bơ: 1/2 cup</li>
+                    <li>Đường nâu: 1/2 cup</li>
+                    <li>Mật ong: 1/4 cup</li>
+                    <li>Bột gừng: 1/2 tsp</li>
+                    <li>Bột quế: 1/2 tsp</li>
+                    <li>Baking soda: 1/2 tsp</li>
+                    <li>Bột đa dụng: 2 cups</li>
+                </ul>
+            </div>
+            <div class="method-box">
+                <h3 class="method-title">Cách làm:</h3>
+                <ol class="method-list">
+                    <li>Trộn bơ, đường, mật ong, bột gừng, bột quế, baking soda</li>
+                    <li>Cho từ từ vào và trộn bột cho đến khi hỗn hợp cứng lại</li>
+                    <li>Tạo hình bánh và nướng 160-170°C trong 15-18p</li>
+                </ol>
+            </div>
+        </div>
+        <button class="back-btn" data-back="cake-selection-page">Back</button>
+        <button class="next-btn" data-next="butter-page">Next</button>
+        <img src="2.png" alt="Image 1" class="top-right-image">
+        <img src="Gingerbread.png" alt="Gingerbread Image" class="bottom-left-image">
+    </section>
+</div>
+    
+
+    <div id="butter-page" class="page hidden">
+        <section id="butter-cookies" class="menu-section">
+            <h2>Bánh Bơ </h2>
+            <div class="recipe">
+                <div class="ingredient-box">
+                <h3 class="ingredient-title">Nguyên liệu:</h3>
+                <ul class="ingredients-list">
+                    <li>Bơ: 1 cup</li>
+                    <li>Đường: 1/2 cup</li>
+                    <li>Tinh dầu vanilla: 1 tsp</li>
+                    <li>All-purpose flour: 2 cups</li>
+                </ul>
+            </div>
+            <div class="method-box">
+                <h3 class="method-title">Cách làm:</h3>
+                <ol class="method-list">
+                    <li>Trộn bơ và đường cho đến khi hỗn hợp hòa tan tương đối.</li>
+                    <li>Thêm tinh dầu vanilla và bột rồi trộn.</li>
+                    <li>Tạo hình bánh và nướng ở 160°C cho đến khi bánh giòn vàng.</li>
+                </ol>
+            </div>
+        </div>
+        <button class="back-btn" data-back="cake-selection-page">Back</button>
+        <button class="next-btn" data-next="butter-page">Next</button>
+        <img src="italian.jpg" alt="Italian" class="top-right-image">
+        <img src="cookies.jpg" alt="Cookies" class="bottom-left-image">
+    </section>
+</div>
+    </div>
+
+    <div id="fruitcake-page" class="page hidden">
+        <section id="fruitcake" class="menu-section">
+            <h2>Bánh Fruitcake</h2>
+            <div class="recipe">
+                <div class="ingredient-box">
+                <h3 class="ingredient-title">Nguyên liệu:</h3>
+                <ul class="ingredients-list">
+                    <li>Nho khô, hạt óc chó, nho khô: 2 chén</li>
+                    <li>Bơ: 1/2 chén</li>
+                    <li>Đường nâu: 1/2 chén</li>
+                    <li>Vang đỏ: 1/2 chén</li>
+                    <li>Bột mỳ đa dụng: 2 chén</li>
+                </ul>
+            </div>
+            <div class="method-box">
+                <h3 class="method-title">Cách làm:</h3>
+                <ol class="method-list">
+                    <li>Hấp nho khô, hạt óc chó, nho khô trong rượu vang đỏ.</li>
+                    <li>Đánh bơ và đường cho đến khi mềm.</li>
+                    <li>Trộn tất cả các nguyên liệu, nướng ở 160°C khoảng 1 giờ.</li>
+                </ol>
+            </div>
+        </div>
+        <button class="back-btn" data-back="cake-selection-page">Back</button>
+        <button class="next-btn" data-next="butter-page">Next</button>
+        <img src="download1.jpg" alt="Download1" class="top-right-image">
+        <img src="download.jpg" alt="Download" class="bottom-left-image">
+    </section>
+</div>
+ 
+
+    <section id="order-form" class="menu-section page hidden">
+        <h2>Order Your Cakes</h2>
+        <div id="order-page">
+            <form id="cake-order-form">
+                <label for="gingerbread-quantity">Gingerbread Cookies Quantity:</label>
+                <input type="number" id="gingerbread-quantity" name="gingerbread-quantity" min="0">
+
+                <label for="butter-quantity">Butter Cookies Quantity:</label>
+                <input type="number" id="butter-quantity" name="butter-quantity" min="0">
+
+                <label for="fruitcake-quantity">Fruitcake Quantity:</label>
+                <input type="number" id="fruitcake-quantity" name="fruitcake-quantity" min="0">
+
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="contact-number">Contact Number:</label>
+                <input type="tel" id="contact-number" name="contact-number" pattern="[0-9]{10}" placeholder="Enter 10-digit number" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+
+                < <button type="submit">Submit Order</button>
+            </form>
+            <button class="back-btn" data-back="cake-selection-page">Back</button>
+        </div>
+    </section>
+
+    <section id="thank-you-page" class="page hidden" style="text-align: center;">
+        <h2 style="margin-top: -2em;">Thank You for Joining with Jolista</h2>
+        <p style="margin-top: -3em;">Merry Christmas!</p>
+    </section>
+    
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
